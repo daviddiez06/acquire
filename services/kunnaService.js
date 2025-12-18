@@ -66,7 +66,6 @@ async function fetchKunnaData(timeStart, timeEnd) {
     throw new Error("KUNNA_MISSING_COLUMNS: value or time not found");
   }
 
-  // Values ya viene ordenado DESC → [día más reciente, día anterior, ...]
   const dailyValues = result.values.slice(0, 3).map(v => v[idxValue]);
 
   const daysUsed = result.values.slice(0, 3).map(v => v[idxTimestamp]);

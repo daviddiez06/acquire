@@ -3,15 +3,15 @@
 function computeTargetDate(now = new Date()) {
   const hour = now.getHours();
 
-  // Si son más de las 23 → predecimos mañana
+  // Si son más de las 23 →  mañana
   if (hour >= 23) {
     const tomorrow = new Date(now);
     tomorrow.setDate(now.getDate() + 1);
-    tomorrow.setHours(22, 0, 0, 0); // como en tu BD de ejemplo
+    tomorrow.setHours(22, 0, 0, 0); 
     return tomorrow;
   }
 
-  // Si no → predecimos hoy
+  // Si no → hoy
   const today = new Date(now);
   today.setHours(22, 0, 0, 0);
   return today;
